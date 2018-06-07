@@ -1,0 +1,7 @@
+config.json
+*/config.json
+*/**/config.json
+
+config.ps1
+*/config.ps1
+*/**/config.ps1
