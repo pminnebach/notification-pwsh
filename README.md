@@ -1,23 +1,29 @@
-# notification pwsh
+# notification-pwsh
 
 The stuff in this repo is used for creating the correct JSON payload which is required by appleboy/gorush.
 
 ## How to use
 
-Create the notification:
+### Create the notification
 
 ````powershell
 $NotificationSplat = @{
-    Tokens = $receivers 
-    Title = "Sonarr: $Event_Type" 
-    Message = "$title" 
+    Tokens = $Tokens 
+    Title = "$Title" 
+    Message = "$Message" 
     Color =  $color
 }
 
 $notification = New-Notification @NotificationSplat
 ````
 
-Then send the request to the Gorush server running somewhere (on your network).
+`$Tokens` should be an array of all the tokens you want to send the message to.
+
+`$color` should be the hex value of a color you want the notification icon to be in the notification drawer. This should include the pound `#` symbol.
+
+By default all notifications are silent. But you also add the `-sound` parameter to play the default sound when you receive a notification.
+
+### Send notification to gorush
 
 ````powershell
 Invoke-WebRequest -Method Post -Uri $GorushUri -Body $notification -UseBasicParsing
