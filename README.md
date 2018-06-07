@@ -17,11 +17,11 @@ $NotificationSplat = @{
 $notification = New-Notification @NotificationSplat
 ````
 
-`$Tokens` should be an array of all the tokens you want to send the message to.
+`$Tokens` should be an array of all the tokens of devices you want to send the message to.
 
 `$color` should be the hex value of a color you want the notification icon to be in the notification drawer. This should include the pound `#` symbol.
 
-By default all notifications are silent. But you also add the `-sound` parameter to play the default sound when you receive a notification.
+By default all notifications are silent. But you can add the `-sound` parameter to play the default sound when you receive a notification.
 
 ### Send notification to gorush
 
