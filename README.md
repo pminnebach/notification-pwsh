@@ -28,3 +28,7 @@ By default all notifications are silent. But you can add the `-sound` parameter 
 ````powershell
 Invoke-WebRequest -Method Post -Uri $GorushUri -Body $notification -UseBasicParsing
 ````
+
+## Todo
+
+- [ ] Add parameter validation.
